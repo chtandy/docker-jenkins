@@ -1,14 +1,16 @@
 version: '3'
 services:
   jenkins:
-    image: jenkins/jenkins:lts
+    build:
+      context: ./
     environment:
       JAVA_OPTS: "-Xmx512m -Xms512m"
     ports:
-      - '9000:8080'
+      - '8080:8080'
       - '5000:5000'
     volumes:
     #sudo mkdir -p /data/jenkins
     #sudo chown -R $USER:$GROUP /data
       - ./data/jenkins:/var/jenkins_home
       - /var/run/docker.sock:/var/run/docker.sock
+      - /usr/bin/docker:/usr/bin/docker
