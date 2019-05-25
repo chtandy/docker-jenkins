@@ -1,0 +1,6 @@
+scm-api
+plain-credentials
+git-client
+git
+github-api
+github
