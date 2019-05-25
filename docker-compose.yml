@@ -3,7 +3,7 @@ services:
   jenkinslab:
     image: jenkins/jenkins:lts
     environment:
-      JAVA_OPTS: "-Xmx256m -Xms256m"
+      JAVA_OPTS: "-Xmx512m -Xms512m"
     ports:
       - '8080:8080'
       - '5000:5000'
@@ -11,4 +11,3 @@ services:
     #sudo mkdir -p ./data/jenkins
     #sudo chown -R $USER:$GROUP ./data
       - ./data/jenkins:/var/jenkins_home
-      - ./data/secrets:/var/jenkins_home/secrets
